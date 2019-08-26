@@ -1,5 +1,6 @@
 const users = require("./users");
 
+// Begin Group 3
 const getUsers = (req, res) => {
   if (req.query.first_name) {
     const filteredUsers = users.filter(
@@ -9,7 +10,9 @@ const getUsers = (req, res) => {
   }
   return res.json(users);
 };
+// End Group 3
 
+// Begin Group 4
 const getUser = (req, res) => {
   const user = users.find(user => user.id === +req.params.id);
   if (!user) {
@@ -18,8 +21,11 @@ const getUser = (req, res) => {
     res.json(user);
   }
 };
+// End Group 4
 
+// Begin Group 5
 module.exports = {
   getUsers: getUsers,
   getUser: getUser
 };
+// End Group 5
